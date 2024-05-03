@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Upload Points</title>
+      <link rel="stylesheet" href="upload-styles.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;700&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <!--background image-->
+      <div class="blurred-background"></div>
+      <div class="container">
+         <!--sidebar-->
+         <div class="sidebar">
+            <div class="sidebar-top">
+               <h1 class="league-title">Duke Fan League</h1>
+               <div class="profile-section">
+                  <img src="pictures/studentLogo.jpg" alt="User Image" class="profile-pic" />
+                  <div class="user-info">
+                     <div class="user-name">Sean Forbes</div>
+                     <div class="user-role">Student</div>
+                  </div>
+               </div>
+               <div class="nav">
+                  <div class="nav-item"><a href="home.php">Dashboard</a></div>
+                  <div class="nav-item"><a href="leaderboard.php">Leaderboard</a></div>
+                  <div class="nav-item"><a href="prizes.html">Prizes</a></div>
+                  <div class="nav-item"><a href="howToPlay.html">How to play</a></div>
+                  <div class="nav-last">
+                     <a href="login.html" class="sign-out-link">Sign Out</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <!--start of upload container-->
+            <div class="upload-container">
+               <div class="upload-header">
+                  <h2>New Points Upload</h2>
+                  <p>We will send submission confirmations and point updates</p>
+               </div>
+               <!--once form is complete return back to home.html-->
+               <form class = "upload-form" action="home.html" method="get">
+                  <div class="form-group file-upload-group">
+                     <input id="photo-upload" type="file" name="photo-upload" required hidden onchange="handleFileUpload(this)" />
+                     <label for="photo-upload" class="file-upload-label">Photo Upload</label>
+                     <span id="file-name" class="file-name"></span>
+                     <div class="file-upload-btn-wrapper">
+                        <button type="button" class="file-upload-btn" onclick="document.getElementById('photo-upload').click();">
+                        <img src="pictures/upload.png" alt="Upload" />
+                        </button>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <!--<input id="email-address" type="email" name="email" placeholder=" " required/>
+                     <label for="email-address">Email Address</label>-->
+                     <input id="sport" type="text" name="sport" placeholder=" " required/>
+                     <label for="sport">Sport/Event</label>
+                  </div>
+                  <div class="form-group">
+                     <input id="seat-number" type="text" name="seat-number" placeholder=" " required/>
+                     <label for="seat-number">Seat Number</label>
+                  </div>
+                  <div class="form-group">
+                     <input id="phone-number" type="tel" name="phone-number" placeholder=" " pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                     <label for="phone-number">Phone Number</label>
+                  </div>
+                  <div class="form-group">
+                     <input type="submit" value="Submit"/>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!--This script allows the user to pull a photo from their file explorer and upload it-->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script>
+         function handleFileUpload(input) {
+             var fileName = input.files[0].name;
+             document.getElementById('file-name').textContent = fileName; // Display file name
+         
+             var label = document.querySelector('.file-upload-label');
+             label.classList.add('active'); // Add 'active' class to label
+         
+             var container = document.querySelector('.file-upload-group');
+             container.classList.add('active'); // Add 'active' class to container
+         }
+      </script>
+   </body>
+</html>

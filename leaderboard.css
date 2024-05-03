@@ -1,0 +1,274 @@
+body, html {
+     margin: 0;
+     padding: 0;
+     font-family: 'Barlow', sans-serif;
+     background-color: #ecf0f1;
+}
+ .container {
+     display: flex;
+     height: 100vh;
+    /* Full viewport height */
+     margin: 5vh;
+    /* Adjust left margin if needed */
+}
+ .sidebar {
+     width: 17.5vw;
+    /* Width of the sidebar */
+     color: white;
+     padding: 1vw;
+     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);
+     margin-right: 2vw;
+    /* Minimum width */
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     border-radius: 20px;
+     align-items: center;
+}
+ .profile-section {
+     display: flex;
+     flex-direction: row;
+    /* Align children horizontally */
+     align-items: center;
+    /* Center-align children vertically */
+     width: 100%;
+    /* Ensure the profile-section takes full width */
+     margin-bottom: 6vh;
+}
+ .profile-pic {
+     width: 7vh;
+    /* Adjust as needed */
+     height: 7vh;
+    /* Adjust as needed */
+     border-radius: 50%;
+    /* Makes the image round */
+     object-fit: cover;
+    /* In case the image needs to be resized */
+     margin-right: 1vh;
+    /* Create space between the image and the text */
+}
+ .user-info {
+     display: flex;
+     flex-direction: column;
+    /* Stack name and role vertically */
+}
+ .user-name {
+     font-size: 3vh;
+    /* Adjust as needed */
+     color: white;
+}
+ .user-role {
+     font-size: 2vh;
+    /* Adjust as needed */
+     color: white;
+     opacity: 0.7;
+    /* Adjust as needed */
+}
+ .user-image {
+     border-radius: 50%;
+     width: 3vh;
+     height: 3vh;
+     object-fit: cover;
+}
+ .user-details {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     text-align: center;
+}
+ .nav {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     width: 100%;
+}
+ .nav-item {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+}
+ .nav-item:not(:last-child) {
+     margin-bottom: 6vh;
+}
+ .nav-last {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+     margin-top: 8vh;
+     text-decoration: underline;
+}
+ .league-title {
+     font-weight: bold;
+    /* Makes the text bold */
+     color: white;
+    /* Assuming you want the title in white color */
+     font-size: 3vh;
+    /* Adjust the font size as needed */
+     font-family: barlow;
+    /* Your chosen font family */
+    /* Add any additional styling you need for the title */
+     text-align: center;
+     margin-bottom: 3vh;
+}
+ .nav-item a {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: none;
+     color: white;
+}
+ .sign-out-link {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: underline;
+     color: white;
+}
+ .nav-item, .nav-last a {
+    /* Your existing styles */
+     cursor: pointer;
+    /* Changes the cursor to indicate the item is clickable */
+     color: inherit;
+    /* Or your default color */
+     text-decoration: none;
+    /* Removes underline from links */
+}
+ .nav-last a {
+     text-decoration: underline;
+}
+ .nav-item a:hover, .nav-last a:hover {
+     color: #bababa;
+    /* Color change on hover */
+}
+ .new-upload-link {
+     text-decoration: none;
+    /* Removes underline from link */
+     color: inherit;
+    /* Inherits text color from parent */
+    /* Add any other styles you need to maintain the look of your dashboard item */
+}
+/* .main-content {
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+    /* Removed justify-content: space-between;
+     to allow natural block flow */
+    /*
+}
+ */
+ .main-content {
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+    /* Centers content horizontally */
+     align-items: flex-start;
+    /* Aligns content to the top, preventing vertical centering */
+}
+ .leaderboard {
+     width: 50vw;
+     max-height: 80vh;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+     background-color: white;
+     padding: 5vh;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     border-radius: 10px;
+     font-family: barlow;
+}
+ .table-header.thead {
+     /*color: #002B88;*/
+     display: flex;
+     align-items: center;
+     background-color: white;
+     position: sticky;
+     top: 0;
+    /* Stick to the top of the table */
+     z-index: 10;
+     width: 100%;
+}
+ .table-header th:first-child {
+     border-top-left-radius: 3px;
+    /* Adjust as needed */
+     border-bottom-left-radius: 3px;
+}
+ .table-header th:last-child {
+     border-top-right-radius: 3px;
+    /* Adjust as needed */
+     border-bottom-right-radius: 3px;
+}
+ .table-container {
+     overflow-y: auto;
+     max-height: calc(80vh - 5vh);
+    /* Height of the leaderboard minus the header height */
+     width: 100%;
+    /* Ensures table container takes full width */
+}
+ .header {
+     justify-content: center;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     margin-bottom: 3vh;
+    /* Space below the header */
+}
+ h1 {
+     /*color: #002B88;*/
+    /* Brighter blue */
+     margin-left: 1vw;
+     font-size: 8vh;
+}
+ table {
+     width: 100%;
+    /* Full width of its parent */
+     border-collapse: collapse;
+     margin: 0;
+    /* Removes any default margin */
+     table-layout: fixed;
+}
+ th, td {
+     text-align: left;
+     padding: 3vh;
+     border-bottom: 1px solid #ddd;
+     font-size: 3vh 
+}
+ th {
+     /*background-color: #002B88;*/
+     color: white;
+     position: sticky;
+     top: 0;
+    /* Stick to the top */
+     z-index: 5;
+}
+ tr:hover {
+     background-color: #f5f5f5;
+}
+ .duke-img {
+     width: 8vh;
+     height: 8vh;
+     background-color: #ddd;
+     border-radius: 50%;
+     margin-right: 1vh;
+}
+/* You may need to adjust this media query according to your existing breakpoints */
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+    }
+     .sidebar {
+         width: 100%;
+        /* Full width on smaller screens */
+         height: auto;
+        /* Auto height */
+    }
+     .main-content {
+         padding-top: 0;
+        /* Remove padding on smaller screens */
+    }
+}

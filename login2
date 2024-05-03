@@ -1,0 +1,166 @@
+body, html {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     font-family: 'Barlow', sans-serif;
+     background: #f6f5f7;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .login-container {
+     background: #fff;
+     border-radius: 10px;
+    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    */
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     display: flex;
+     width: 80vw;
+     height: 80vh;
+}
+ .login-section {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+    /* Ensures vertical centering */
+     align-items: center;
+    /* Ensures horizontal centering */
+     text-align: center;
+}
+ .login-section.right {
+     background: linear-gradient(to right, #0052D4, #65C7F7);
+     color: white;
+     border-top-right-radius: 10px;
+     border-bottom-right-radius: 10px;
+}
+ h2 {
+     font-size: 7vh;
+     font-weight: bold;
+     margin: 0;
+    /* Remove bottom margin */
+}
+ .login-section input {
+     border-radius: 10px;
+     background: #eee;
+     font-size: 3vh;
+     border: none;
+     padding: 1.5vh 3vh;
+    /* Adjust padding to your liking */
+     margin: 1.5vh 0;
+    /* Adjust margin to your liking */
+     width: calc(100% - 15vw);
+    /* Adjust width calculation if needed */
+}
+ .forgot-password-container {
+     margin-top: 1vh;
+    /* Adjust this value to increase/decrease the space between the password box and the link */
+     display: flex;
+     justify-content: center;
+    /* Centers the link horizontally */
+}
+ .forgot-password {
+     color: #333;
+     font-size: 2.5vh;
+     text-decoration: none;
+    /* Remove margin to only use the container's margin for spacing */
+     margin-bottom: 2vh;
+}
+ .forgot-password:hover {
+     color: #0052D4;
+    /* Change the color on hover */
+}
+ .sign-in-btn {
+     border: none;
+     outline: none;
+     color: #fff;
+     background: #0052D4;
+     cursor: pointer;
+     padding: 2vh;
+     border-radius: 20px;
+     width: calc(100% - 15vw);
+    /* Adjust width calculation if needed */
+     font-size: 2.5vh;
+     margin: 0;
+    /* Remove top margin */
+}
+ .sign-in-btn:hover {
+     background: #003b99;
+     transition: background-color 0.5s ease;
+}
+ .ghost {
+     background: transparent;
+     border: 2px solid white;
+     color: white;
+     padding: 2vh;
+     border-radius: 20px;
+     transition: background-color 0.5s ease;
+     font-size: 2.5vh;
+     width: calc(100% - 8vw);
+}
+ .ghost:hover {
+     background-color: rgba(255, 255, 255, 0.2);
+}
+ .overlay-panel {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding: 6vw;
+     ;
+}
+ .overlay-panel h1 {
+     font-size: 6vh;
+     font-weight: bold;
+     margin-top: 1.0vh;
+}
+ .overlay-panel p {
+     font-size: 3vh;
+    margin-top: 7vh;
+     margin-bottom: 7vh;
+}
+/* Removed background image */
+ .login-section:first-child {
+     background: none;
+}
+/* Add responsiveness if necessary */
+ @media (max-width: 768px) {
+     .login-container {
+         flex-direction: column;
+    }
+     .login-section {
+         padding: 30px;
+         width: 100%;
+    }
+     .login-section.right {
+         padding: 20px;
+    }
+}
+
+
+.signup-input {
+    border-radius: 10px;
+    background: #eee;
+    font-size: 3vh;
+    border: none;
+    padding: 1.5vh 3vh;
+    margin: 1.5vh 0;
+    width: calc(100%);
+}
+
+
+ .ghost2 {
+     background: transparent;
+     border: 2px solid white;
+     color: white;
+     padding: 2vh;
+     border-radius: 20px;
+     transition: background-color 0.5s ease;
+     margin-top: 3vh;
+     font-size: 2.5vh;
+     width: calc(100% - 14vw);
+}
+ .ghost2:hover {
+     background-color: rgba(255, 255, 255, 0.2);
+}

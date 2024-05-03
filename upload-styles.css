@@ -1,0 +1,465 @@
+body, html {
+     margin: 0;
+     padding: 0;
+     font-family: barlow;
+    /*background-color: #ecf0f1;
+    */
+     width: 100%;
+    /* Full width */
+}
+ .blurred-background {
+     position: fixed;
+    /* or absolute */
+     top: 0;
+     left: 0vh;
+     width: 115%;
+     height: 100%;
+     z-index: -1;
+    /* Send it to the back */
+     /*background-image: url('pictures/uploadBackground.png');*/
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     filter: blur(5px);
+    /* Apply the blur effect directly */
+}
+ .container {
+     display: flex;
+     margin: 5vh;
+     min-height: 100vh;
+}
+ .sidebar {
+     margin-right: 2vw;
+     height: 90vh;
+    /* 90% of the viewport height */
+     width: 16vw;
+    /* Adjusted width */
+    /* Minimum width */
+     /*background-color: #00318D;*/
+     color: white;
+     padding: 1vw;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     border-radius: 20px;
+     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);
+     align-items: center;
+}
+ .profile-section {
+     display: flex;
+     flex-direction: row;
+    /* Align children horizontally */
+     align-items: center;
+    /* Center-align children vertically */
+     width: 100%;
+    /* Ensure the profile-section takes full width */
+     margin-bottom: 6vh;
+}
+ .profile-pic {
+     width: 7vh;
+    /* Adjust as needed */
+     height: 7vh;
+    /* Adjust as needed */
+     border-radius: 50%;
+    /* Makes the image round */
+     object-fit: cover;
+    /* In case the image needs to be resized */
+     margin-right: 1vh;
+    /* Create space between the image and the text */
+}
+ .user-info {
+     display: flex;
+     flex-direction: column;
+    /* Stack name and role vertically */
+}
+ .user-name {
+     font-size: 3vh;
+    /* Adjust as needed */
+     color: white;
+}
+ .user-role {
+     font-size: 2vh;
+    /* Adjust as needed */
+     color: white;
+     opacity: 0.7;
+    /* Adjust as needed */
+}
+ .user-image {
+     border-radius: 50%;
+     width: 3vh;
+     height: 3vh;
+     object-fit: cover;
+}
+ .user-details {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     text-align: center;
+}
+ .nav {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     width: 100%;
+}
+ .nav-item {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+}
+ .nav-item:not(:last-child) {
+     margin-bottom: 6vh;
+}
+ .nav-last {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+     margin-top: 9vh;
+     text-decoration: underline;
+}
+ .league-title {
+     font-weight: bold;
+    /* Makes the text bold */
+     color: white;
+    /* Assuming you want the title in white color */
+     font-size: 3vh;
+    /* Adjust the font size as needed */
+     font-family: barlow;
+    /* Your chosen font family */
+    /* Add any additional styling you need for the title */
+     text-align: center;
+     margin-bottom: 3vh;
+}
+ .nav-item a {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: none;
+     color: white;
+}
+ .sign-out-link {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: underline;
+     color: white;
+}
+ .nav-item, .nav-last a {
+    /* Your existing styles */
+     cursor: pointer;
+    /* Changes the cursor to indicate the item is clickable */
+     color: inherit;
+    /* Or your default color */
+     text-decoration: none;
+    /* Removes underline from links */
+}
+ .nav-last a {
+     text-decoration: underline;
+}
+ .nav-item a:hover, .nav-last a:hover {
+     color: #bababa;
+    /* Color change on hover */
+}
+ .new-upload-link {
+     text-decoration: none;
+    /* Removes underline from link */
+     color: inherit;
+    /* Inherits text color from parent */
+    /* Add any other styles you need to maintain the look of your dashboard item */
+}
+/* Copy all your sidebar styles from styles.css here */
+/* Sidebar styles from styles.css should be copied here */
+ .main-content {
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+    /*background-color: #ecf0f1;
+    */
+}
+ .upload-container {
+     background-color: #fff;
+     padding: 7vh;
+     border-radius: 20px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+     opacity: 10px;
+     text-align: center;
+     height: 79vh;
+     background: rgba(255, 255, 255, .8);
+     width: 80vh;
+    /*width: 100%;
+    */
+}
+ .upload-container h2 {
+     /*color: #00318D;*/
+     font-family: 'Barlow', sans-serif;
+     font-size: 5vh;
+     margin-bottom: -2vh;
+     margin-top: 0vh;
+}
+ .upload-container p {
+    /*color: #666;
+    */
+     color: black;
+     font-family: 'Asap Condensed', sans-serif;
+     font-size: 3vh;
+     margin-bottom: 6vh;
+}
+ .upload-form {
+     display: flex;
+     flex-direction: column;
+     gap: 3vh;
+}
+ .form-group {
+     position: relative;
+     padding-top: 1vh;
+    /* Creates space for the label to move into */
+     margin-bottom: 2vh;
+}
+ .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], 
+/*.form-group input[type="file"],*/
+ .form-group input[type="submit"] {
+     width: 100%;
+     padding: 2.3vh;
+     border: 1px solid #ccc;
+     border-radius: 20px;
+    /* Oval shape */
+     box-sizing: border-box;
+     background-color: #fafafa;
+    /*transition: border-color 0.3s;
+    */
+     font-size: 2.8vh;
+     color: black;
+}
+ .form-group input[type="text"]:onclick, .form-group input[type="email"]:onclick, .form-group input[type="tel"]:onclick, .form-group input[type="file"]:onclick, .form-group input[type="submit"]:onclick {
+     transition: 0.3s;
+     /*border: 2px solid #00318D;*/
+}
+ .form-group input[type="file"] {
+     padding: 18px 0;
+    /* Adjust padding for file input */
+     cursor: pointer;
+     color: transparent;
+    /* Hide the default file input text */
+}
+ .form-group input[type="file"]::-webkit-file-upload-button {
+     visibility: hidden;
+    /* Hide the default button */
+}
+ .form-group input[type="file"]::before {
+     content: 'Choose file...';
+    /* Custom text */
+     display: inline-block;
+     background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+     border: 1px solid #999;
+     border-radius: 20px;
+    /* Oval shape */
+     padding: 2.3vh;
+     outline: none;
+     white-space: nowrap;
+     -webkit-user-select: none;
+     cursor: pointer;
+     text-align: center;
+     font-size: 2.8vh;
+     color: #999;
+}
+ .form-group input[type="file"]:hover::before {
+     border-color: black;
+}
+ .form-group input[type="file"]:active::before {
+     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+     background: white;
+     border: 10px solid #ff0000;
+}
+ .form-group label {
+     position: absolute;
+     left: 2.8vh;
+     top: 50%;
+     transform: translateY(-50%);
+     transition: all 0.3s;
+     pointer-events: none;
+     color: #999;
+     background: none;
+     padding: 0;
+     font-size: 2.8vh;
+}
+ .form-group:not(.file-upload-group) input:focus+label, .form-group:not(.file-upload-group) input:not(:placeholder-shown)+label {
+     top: -1.5vh;
+    /* Adjust as needed for the label to move above the input */
+     font-size: 2.8vh;
+     /*color: #00318D;*/
+}
+ .form-group input:focus, .form-group input:not(:placeholder-shown) {
+     /*border-color: #00318D;*/
+     background-color: #fff;
+}
+ .form-group.file-upload-group {
+     display: flex;
+     align-items: center;
+     border: 1px solid #ccc;
+     border-radius: 20px;
+     padding: 2.3vh;
+     background-color: #fafafa;
+}
+ .form-group.file-upload-group:focus{
+     background-color: #ffffff;
+}
+/*.form-group.file-upload-group label {
+     flex-grow: 1;
+     color: #00318D;
+     margin: 0;
+}
+*/
+ .file-upload-btn-wrapper {
+     margin-left: auto;
+}
+ .file-upload-btn {
+     background: none;
+     border: none;
+     cursor: pointer;
+     padding: 0;
+}
+ .file-upload-btn img {
+     height: 2.7vh;
+    /* Adjust as needed */
+     width: auto;
+}
+ .form-group input[type="submit"] {
+     /*background-color: #00318D;*/
+     color: white;
+     border: none;
+     cursor: pointer;
+     transition: background-color .3s;
+}
+ .file-upload-group {
+     display: flex;
+     align-items: center;
+     border: 1px solid #ccc;
+     border-radius: 20px;
+     padding: 2.3vh;
+     background-color: #fafafa;
+     position: relative;
+}
+ .file-upload-label {
+     flex-grow: 1;
+     color: #999;
+     margin: 0;
+     position: absolute;
+     transition: all 0.3s;
+     top: 50%;
+    /* Centered vertically */
+     left: 50%;
+    /* Centered horizontally */
+     transform: translate(-50%, -50%);
+    /* Align center */
+    /* Other styles... */
+}
+ .file-upload-group.active {
+     /*border: 1px solid #00318D;*/
+    /* Adjust the border style as needed */
+     background: white;
+}
+ .file-upload-label.active {
+     /*color: #00318D;
+    or any other styling you prefer for the active state */
+    /* Blue color */
+     top: -5vh;
+    /* Move above the input */
+     left: 2%;
+    /* Adjust as necessary */
+     transform: translateY(20%);
+    /* Reset transform for vertical align */
+    /*background: red;
+    */
+     padding: 0 1vh;
+    /* Add some padding if needed */
+}
+ .file-name {
+     display: block;
+    /* Show the file name */
+     position: absolute;
+    /* Position it relative to the parent */
+     left: 2.8vh;
+    /* Align to the left inside the container */
+     top: 50%;
+    /* Center it vertically */
+     transform: translateY(-50%);
+    /* Center alignment */
+     font-size: 2.8vh;
+    /* Keep font size consistent */
+     color: black;
+    /* Color for the file name */
+     white-space: nowrap;
+    /* Prevents the file name from wrapping */
+}
+ .file-upload-btn-wrapper {
+     margin-left: auto;
+}
+ @media (max-width: 768px) {
+     .main-content {
+         padding: 10px;
+    }
+     .upload-container {
+         padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+.sport-form-group {
+    position: relative;
+    padding-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.sport-form-group select {
+    width: 100%;
+    padding: 2.3vh;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    font-size: 2.8vh;
+    color: black;
+    position: relative;
+}
+
+.sport-form-group label {
+    position: absolute;
+    left: 2.8vh;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    pointer-events: none;
+    color: #999;
+    background: none;
+    padding: 0;
+    font-size: 2.8vh;
+}
+
+.sport-form-group label.active {
+    top: -1.5vh;
+    font-size: 2.8vh;
+    /*color: #00318D;*/
+}
+
+.sport-form-group select.active {
+    /*border: 1px solid #00318D; Blue border color */
+    border-radius: 20px; /* Adjust border radius as needed */
+}
+
+.sport-form-group select {
+    /* Existing styles */
+    -webkit-appearance: none; /* Remove default arrow for webkit browsers */
+    -moz-appearance: none; /* Remove default arrow for Mozilla Firefox */
+    appearance: none; /* Remove default arrow */
+    background-image: none; /* Remove any background image */
+    background-position: right center; /* Adjust background position if needed */
+}

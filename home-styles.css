@@ -1,0 +1,674 @@
+body, html {
+     margin: 0;
+     padding: 0;
+     font-family: barlow;
+     background-color: #ecf0f1;
+     width: 100%;
+    /* Full width */
+}
+ .container {
+     display: flex;
+     margin: 5vh;
+     min-height: 100vh;
+}
+ .sidebar {
+     margin-right: 2vw;
+     height: 90vh;
+    /* 90% of the viewport height */
+     width: 22vw;
+    /* Adjusted width */
+    /* Minimum width */
+     background-color: #00318D;
+     color: white;
+     padding: 1vw;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     border-radius: 20px;
+     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);
+     align-items: center;
+}
+ .profile-section {
+     display: flex;
+     flex-direction: row;
+    /* Align children horizontally */
+     align-items: center;
+    /* Center-align children vertically */
+     width: 100%;
+    /* Ensure the profile-section takes full width */
+     margin-bottom: 6vh;
+}
+ .profile-pic {
+     width: 7vh;
+    /* Adjust as needed */
+     height: 7vh;
+    /* Adjust as needed */
+     border-radius: 50%;
+    /* Makes the image round */
+     object-fit: cover;
+    /* In case the image needs to be resized */
+     margin-right: 1vh;
+    /* Create space between the image and the text */
+}
+ .user-info {
+     display: flex;
+     flex-direction: column;
+    /* Stack name and role vertically */
+}
+ .user-name {
+     font-size: 3vh;
+    /* Adjust as needed */
+     color: white;
+}
+ .user-role {
+     font-size: 2vh;
+    /* Adjust as needed */
+     color: white;
+     opacity: 0.7;
+    /* Adjust as needed */
+}
+ .user-image {
+     border-radius: 50%;
+     width: 3vh;
+     height: 3vh;
+     object-fit: cover;
+}
+ .user-details {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     text-align: center;
+}
+ .nav {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     width: 100%;
+}
+ .nav-item {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+}
+ .nav-item:not(:last-child) {
+     margin-bottom: 6vh;
+}
+ .nav-last {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     font-size: 3vh;
+     margin-top: 8vh;
+     text-decoration: underline;
+}
+ .league-title {
+     font-weight: bold;
+    /* Makes the text bold */
+     color: white;
+    /* Assuming you want the title in white color */
+     font-size: 3vh;
+    /* Adjust the font size as needed */
+     font-family: barlow;
+    /* Your chosen font family */
+    /* Add any additional styling you need for the title */
+     text-align: center;
+     margin-bottom: 3vh;
+}
+ .nav-item a {
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: none;
+     color: white;
+}
+ .sign-out-link {
+     padding: 10px 0;
+     cursor: pointer;
+     width: 100%;
+     text-align: center;
+     text-decoration: underline;
+     color: white;
+}
+ .nav-item, .nav-last a {
+    /* Your existing styles */
+     cursor: pointer;
+    /* Changes the cursor to indicate the item is clickable */
+     color: inherit;
+    /* Or your default color */
+     text-decoration: none;
+    /* Removes underline from links */
+}
+ .nav-last a {
+     text-decoration: underline;
+}
+ .nav-item a:hover, .nav-last a:hover {
+     color: #bababa;
+    /* Color change on hover */
+}
+ .new-upload-link {
+     text-decoration: none;
+    /* Removes underline from link */
+     color: inherit;
+    /* Inherits text color from parent */
+    /* Add any other styles you need to maintain the look of your dashboard item */
+}
+ .main-content {
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+    /* Removed justify-content: space-between;
+     to allow natural block flow */
+}
+ .header {
+     margin-top: 1vh;
+     font-size: 3vh;
+     color: #858585;
+     font-family: barlow;
+    /* Set margin-bottom to a small value or even zero if you want to reduce space */
+     margin-bottom: 1vh;
+    /* Adjust this value to bring dashboard up */
+}
+ .header-2{
+     font-size: 7vh;
+     font-family: barlow;
+     font-weight: bold;
+     color: #000000;
+     margin-bottom: 4vh;
+    /* Increase this value to add more space */
+}
+ .dashboard {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 4vh;
+    /* Remove margin-top: auto;
+     to bring the grid up */
+    /* Optional: Adjust margin-top here if you need more precise control */
+}
+ .dashboard-item {
+    background-color: #F3F4EF;
+     border-radius: 30px;
+    /*adjust this to increase roundedness of corners*/
+     padding: 4vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    
+     height: 28vh;
+    /* Adjust the height as necessary */
+     position: relative;
+}
+ .dashboard-item.new-upload img {
+     border-radius: 20px;
+    /* Rounded corners */
+     width: 80%;
+    /* Image takes up 80% of the box */
+     height: 40%;
+     position: absolute;
+    /* Absolute position to prevent resizing the container */
+     top: 35%;
+    /* Center vertically */
+     left: 50%;
+    /* Center horizontally */
+     transform: translate(-50%, -50%);
+    /* Offset the positioning */
+     max-width: none;
+    /* Override any max-width */
+     transition: width 0.3s ease;
+}
+ .dashboard-item.new-upload img:hover {
+     width: 23vw;
+     transition: width 0.3s ease;
+}
+/* Adjust the .dashboard-item.new-upload to align its children */
+ .dashboard-item.new-upload {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+    /* Prevents the content from expanding the box */
+     position: relative;
+}
+ .upload-info {
+     display: flex;
+     align-items: center;
+     margin-top: 21vh;
+}
+ .dashboard-item.top-devil {
+     grid-column: 2 / 5;
+    /* Spans from the second to the fifth column */
+     background: linear-gradient(to right, #00318D, #3a7efd);
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+    /* Evenly space the content */
+}
+ .top-devil-info{
+     position: relative;
+    /* Required for absolute positioning of the pseudo-element */
+     display: inline-block;
+    /* Ensures the container fits the content */
+    /* Other styles... */
+}
+/* Set up the ::after pseudo-elements for the underline effect, initially hidden */
+ .top-devil-info::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: -4px;
+    /* Adjust as needed to position the underline */
+     left: 0;
+     background-color: #ffffff;
+     transition: width 0.25s ease-out;
+     transform-origin: bottom left;
+}
+/* When hovering over .dashboard-item.top-devil, underline each line in .top-devil-info */
+ .dashboard-item.top-devil:hover .top-devil-info::after {
+     width: 100%;
+}
+ .top-devil-textbox {
+     text-align: left;
+    /* Aligns text to the left */
+     color: #FFF;
+    /* White text color */
+     margin-left: 18.5vw;
+    /* Add space between the circle and the text box */
+     flex-grow: 1;
+    /* Allows the text box to fill the space */
+     font-family: barlow;
+}
+ .top-devil-info {
+     font-size: 5vh;
+    /* Adjust the size as needed */
+     font-weight: bold;
+     margin-bottom: 6vh;
+    /* Space between the info and action */
+}
+ .top-devil-action {
+     font-size: 3vh;
+    /* Adjust the size as needed */
+     font-style: italic;
+    /* Makes it bold */
+}
+ .dashboard-item.date, .dashboard-item.chat, .dashboard-item.settings, .dashboard-item.dfl {
+     grid-column: span 1;
+    /* Each takes one column */
+}
+/* ... other styles ... */
+ .top-devil {
+    /* Your existing styles */
+     position: relative;
+    /* Needed to position the circle badge absolutely */
+}
+ .circle-badge {
+     width: 14vw;
+    /* Adjust size as needed */
+     height: 27.5vh;
+     border-radius: 50%;
+    /* Makes it round */
+     background: linear-gradient(to right, #00318D, #3a7efd);
+    /* Your circle color */
+     border: 1.3vh solid white;
+    /* Adjust width as needed for white frame */
+     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     position: absolute;
+    /* Position it over the Top Devil box */
+     top: 50%;
+    /* Center it vertically */
+     left: 1.6vw;
+    /* Adjust horizontal position as needed */
+     transform: translate(0, -50%);
+    /* Center it vertically with offset */
+     z-index: 2;
+}
+ .circle-text {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-family: barlow;
+}
+ .circle-number {
+     font-size: 10vh;
+    /* Adjust size as needed */
+     font-weight: bold;
+    /* Makes it bold */
+}
+ .circle-label {
+     font-size: 2.75vh;
+    /* Adjust size as needed */
+}
+/* ... media queries ... */
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+    }
+     .sidebar {
+         width: 100%;
+         border-radius: 0;
+    }
+     .dashboard {
+         grid-template-columns: 1fr;
+        /* Single column layout on small screens */
+    }
+     .dashboard-item {
+         height: auto;
+        /* Make the height responsive */
+         margin-bottom: 10px;
+    }
+     .dashboard-item.top-devil {
+         grid-column: 1 / -1;
+        /* Full width on small screens */
+    }
+}
+ .dashboard-item.dfl img {
+     width: 100%;
+    /* Makes the image fill the width of the container */
+     height: auto;
+    /* Scales the height automatically maintaining the aspect ratio */
+     display: block;
+    /* Allows you to apply margin auto for centering */
+     object-fit: cover;
+    /* Ensures the image covers the container without stretching */
+     border-radius: 10px;
+    /* Match the border-radius of the container */
+}
+
+
+.dashboard-item.dfl {
+    /* Other styles for .dashboard-item.dfl */
+
+    /* Set gradient background */
+    background: linear-gradient(200deg, #2b75ff, #000d27);
+    
+}
+
+
+
+
+ .dashboard-item.settings img, .dashboard-item.chat img {
+     width: 100%;
+    /* Makes the image fill the width of the container */
+     height: auto;
+    /* Scales the height automatically maintaining the aspect ratio */
+     display: block;
+    /* Allows you to apply margin auto for centering */
+     object-fit: cover;
+    /* Ensures the image covers the container without stretching */
+     border-radius: 10px;
+    /* Match the border-radius of the container */
+}
+ .date-content {
+     text-align: center;
+     position: relative;
+}
+ .dashboard-item.date {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     font-family: barlow;
+     position: relative;
+     background: linear-gradient(to right, #001b47, #004594);
+}
+ .date-month {
+     font-size: 2vw;
+    /* Adjust as needed */
+     font-weight: normal;
+     text-transform: uppercase;
+     margin-bottom: 0px;
+    /* Adjust as needed */
+     z-index: 2;
+     color: white;
+}
+ .date-day {
+     font-size: 11vw;
+    /* Adjust as needed */
+     font-family: barlow;
+     font-weight: bold;
+     line-height: 1;
+     z-index: 2;
+     color: white;
+}
+ .calendar-icon {
+     position: absolute;
+     top: 47%;
+    /* Center vertically */
+     left: 50%;
+    /* Center horizontally */
+     transform: translate(-50%, -50%);
+    /* Place it behind the text */
+     max-width: 290px;
+    /* Limit size to fit within the container */
+     max-height: 500px;
+     z-index: 1;
+}
+ .dashboard-item.dfl, .dashboard-item.settings, .dashboard-item.chat {
+     position: relative;
+    /* Position relative to allow absolute positioning of children */
+     overflow: hidden;
+    /* Clip the overflow */
+     border-radius: 30px;
+    /* Maintain the border-radius of the container */
+}
+ .dashboard-item.dfl img, .dashboard-item.settings img, .dashboard-item.chat img {
+     width: 100%;
+    /* Make the image fill the width of the container */
+     height: 100%;
+    /* Make the image fill the height of the container */
+     object-fit: cover;
+    /* Cover the container fully, clipping the excess */
+     position: absolute;
+    /* Position absolutely to stay within the container */
+     top: 0;
+     left: 0;
+}
+ .dashboard-item.ptw-dashboard {
+     background: linear-gradient(to right, #F3F4EF, #F3F4EF);
+    /* Example green gradient */
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 30px;
+    /* other styles as needed */
+     position: relative;
+    /* Ensures absolute positioning is relative to this container */
+     overflow: hidden;
+    /* Ensures the waves image respects the border-radius */
+     font-family: barlow;
+}
+ .ptw-content {
+     text-align: center;
+     position: relative;
+    /* Ensures the text appears above the waves image */
+     z-index: 2;
+    /* Higher z-index to overlay on top of the waves image */
+     top: -5vh;
+     color: #086BBB;
+}
+ .ptw-title {
+     font-size: 3vh;
+     font-weight: bold;
+     margin-bottom: -2vh;
+}
+ .ptw-points {
+     font-size: 14vh;
+     font-weight: bold;
+     transition: font-size .3s ease;
+}
+ .ptw-points:hover {
+     font-size: 15.5vh;
+     transition: font-size .3s ease;
+}
+ .ptw-waves {
+     position: absolute;
+    /* Absolute positioning inside the .ptw-dashboard */
+     bottom: -13vh;
+    /* Aligns to the bottom */
+     left: 0;
+     width: 100%;
+    /* Full width of the container */
+     height: 100%;
+    /* Height of the waves image - adjust as needed */
+     background: url('pictures/waves.png') no-repeat bottom;
+    /* Path to your waves image */
+     background-size: cover;
+    /* Ensures the image covers the div */
+     z-index: 1;
+    /* Lower z-index to be behind the text content */
+}
+ .dashboard-item.upcoming-events {
+     grid-column: span 2;
+    /* Span across two columns */
+     display: flex;
+     align-items: center;
+    /* Align the content vertically */
+     justify-content: flex-end;
+    /* Align the content to the right */
+     border-radius: 30px;
+     overflow: hidden;
+    /* Hide overflow to maintain the border-radius */
+     position: relative;
+    /* Needed for positioning the background image absolutely */
+}
+ .events-background {
+    position: absolute;
+    /* Position the background image container absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Make it cover the entire container */
+     height: 100%;
+    /* Make it cover the entire container */
+     z-index: 1;
+    /* Set z-index lower than the text content */
+}
+ .events-background-image {
+     width: 50%;
+    /* Make it cover the entire .events-background */
+     height: 100%;
+    /* Make it cover the entire .events-background */
+     object-fit: cover;
+    /* Ensure it covers nicely */
+     border-radius: 30px;
+    /* If you want the image itself to have rounded corners */
+}
+ .events-right {
+     font-family: Barlow;
+     font-style: normal;
+     padding: 2vh;
+     color: #003087;
+     z-index: 2;
+    /* Ensure it's above the background image */
+     background: none;
+    /* Clear any background */
+     position: relative;
+    /* Make sure it's positioned in the document flow */
+     width: 50%;
+    /* Adjust the width as needed */
+}
+ .events-list {
+     list-style: none;
+     padding: 0;
+     text-align: center;
+    /* Adjust the font-size if necessary */
+}
+ .events-list li {
+     font-size: 3vh;
+     margin-bottom: 1vh;
+     transition: font-size .3s ease 
+}
+ .events-list li:hover {
+     font-size: 3.5vh;
+}
+ .events-list hr {
+     border: 0;
+     height: 1px;
+     background-color: white;
+     margin: 1vh 0;
+}
+ .dashboard-item.new-upload {
+     position: relative;
+    /* Establish relative positioning */
+     overflow: hidden;
+    /* Ensure content doesn't spill outside */
+    /* Other existing styles */
+     background-color: #002d80;
+     
+}
+ .dashboard-item.new-upload .background-image {
+     width: 120%;
+    /* Make the image cover the entire item */
+     height: 120%;
+    /*top: 22vh;
+    */
+     top: 19vh;
+     object-fit: cover;
+    /* Ensure image covers the area */
+     border-radius: 30px;
+    /* Match the container's border-radius */
+}
+ .dashboard-item.new-upload .overlay-text {
+     position: absolute;
+    /* Absolute positioning for overlay */
+     top: -12vh;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+    /* Flexbox for alignment */
+     justify-content: center;
+    /* Center vertically */
+     align-items: center;
+    /* Center horizontally */
+     text-align: center;
+    /* Center the text */
+}
+ .upload-plus {
+     display: flex;
+     justify-content: center;
+    /* Center horizontally */
+     align-items: center;
+    /* Center vertically */
+     width: 6vh;
+    /* Width of the plus icon container */
+     height: 6vh;
+    /* Height of the plus icon container */
+     background-color: #011C9B;
+    /* Duke blue background */
+     border-radius: 10px;
+    /* Rounded corners for the plus icon container */
+     color: white;
+    /* Color of the plus icon */
+     font-size: 6vh;
+    /* Adjusted size of the plus icon */
+     font-weight: bold;
+    /* Bold font for the plus icon */
+     margin: 0;
+    /* Remove any default margin */
+     padding: 0;
+    /* Remove any default padding */
+     line-height: 1;
+    /* Ensure the line height matches the height of the container */
+}
+ .upload-text {
+     font-size: 5vh;
+    /* Adjust the size as needed */
+     font-family: Asap Condensed;
+     font-weight: bold;
+     color: #011C9B;
+    /* Ensure text is visible on image */
+     margin-right: 2vh;
+}

@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ticket-verification {
+    padding: 1vw;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tickets-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 1vw;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td img{
+    width: 3vw;
+    height: 3vw;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.back-to-login {
+    position: fixed;
+    bottom: 2vh;
+    right: 3vw;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.back-to-login img {
+    width: 5vw;
+    height: auto;
+    opacity: 0.1;
+    transition: opacity ease-in .2s;
+}
+
+.back-to-login img:hover {
+    opacity: 1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 2vh;
+}
+
+.checkbox-button {
+    width: 5vh; /* Adjust as needed for responsiveness */
+    height: 5vh; /* Same as width to make it square */
+    background-color: transparent;
+    border: 2px solid #000000; /* Green border */
+    border-radius: 5px; /* Adjust as needed */
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5); /* Green box shadow */
+    background-image: url('pictures/checkbox.png'); /* Replace with your checkbox image */
+    background-size: 80%; /* Adjust size of the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.checkbox-button:hover {
+    border-color: #1200d2; /* Darker green border on hover */
+    background-color: rgb(42, 0, 193);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.8); /* Darker green box shadow on hover */
+}
+
+/* Additional CSS for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px; /* Space for the close button */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Semi-transparent background */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*buttons*/
+.button-container {
+    display: flex;
+}
+button {
+    width: 1.8vw;
+    height: 1.8vw;
+    margin-right: .3vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.approve-button {
+    background-color: rgb(140, 202, 140);
+}
+.approve-button:hover {
+    background-color: rgb(17, 217, 17);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.info-button {
+    background-color: rgb(231, 227, 133);
+}
+.info-button:hover {
+    background-color: rgb(240, 240, 7);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.reject-button{
+    background-color: rgb(202, 140, 140);
+}
+.reject-button:hover {
+    background-color: rgb(210, 30, 30);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
